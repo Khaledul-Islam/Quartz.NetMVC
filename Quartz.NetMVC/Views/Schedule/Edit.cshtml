@@ -1,0 +1,84 @@
+﻿@model Quartz.NetMVC.Models.Schedule
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Schedule</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="JobName" class="control-label"></label>
+                <input asp-for="JobName" class="form-control" />
+                <span asp-validation-for="JobName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="JobGroup" class="control-label"></label>
+                <input asp-for="JobGroup" class="form-control" />
+                <span asp-validation-for="JobGroup" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="JobIdentity" class="control-label"></label>
+                <input asp-for="JobIdentity" class="form-control" />
+                <span asp-validation-for="JobIdentity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CronSchedule" class="control-label"></label>
+                <input asp-for="CronSchedule" class="form-control" />
+                <span asp-validation-for="CronSchedule" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsActive" /> @Html.DisplayNameFor(model => model.IsActive)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="StopOnError" /> @Html.DisplayNameFor(model => model.StopOnError)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="CreatedBy" class="control-label"></label>
+                <input asp-for="CreatedBy" class="form-control" />
+                <span asp-validation-for="CreatedBy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CreatedDate" class="control-label"></label>
+                <input asp-for="CreatedDate" class="form-control" />
+                <span asp-validation-for="CreatedDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LastUpdatedBy" class="control-label"></label>
+                <input asp-for="LastUpdatedBy" class="form-control" />
+                <span asp-validation-for="LastUpdatedBy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LastUpdatedDate" class="control-label"></label>
+                <input asp-for="LastUpdatedDate" class="form-control" />
+                <span asp-validation-for="LastUpdatedDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ExecutionDate" class="control-label"></label>
+                <input asp-for="ExecutionDate" class="form-control" />
+                <span asp-validation-for="ExecutionDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
