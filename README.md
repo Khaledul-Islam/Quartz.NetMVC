@@ -1,6 +1,7 @@
 # Quartz.NetMVC
-# Template to run quartz.net service in DotNet 6 MVC Application
-# Ignore Controller and View
+
+* Template to run quartz.net service in DotNet 6 MVC Application
+* Ignore Controller and View
 
 
 # Instrunction
